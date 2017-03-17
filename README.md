@@ -29,8 +29,25 @@ To include additional timings the middleware exposes two methods on the `res.loc
 - `start(label)` - record the start time
 - `end(label)` - end the record time - if this isn't called, it will be called when the request is finished
 
-## Example
+### Start/end as middleware
+
+As well as being exposed in `res.locals.timings` you can also call start and end as middleware:
+
+```js
+app.use(timings);
+app.use(timings.start('routing'));
+app.use(require('./routes'));
+app.use(timings.end('routing'));
+```
+
+## Live example
 
 See [jsonbin.org](https://jsonbin.org) for a working example. As of March 2017, the networking timings can be seen in Canary:
 
 ![Screenshot](.github/screenshot.png)
+
+## Limitations
+
+- Currently only ES6 support (not tranpiled down to ES5…yet)
+- Expects `next()` so limited to Express
+- Currently no tests(!)
