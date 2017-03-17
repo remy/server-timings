@@ -9,7 +9,7 @@ Firstly you need to load the middleware as early as possible to record the reque
 ```js
 const express = require('express');
 const app = express();
-const timings = require('./server-timings');
+const timings = require('server-timings');
 
 app.use(timings);
 app.use(require('./routes'));
