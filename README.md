@@ -44,7 +44,7 @@ app.use(timings.end('routing'));
 
 See [jsonbin.org](https://jsonbin.org) for a working example. As of March 2017, the networking timings can be seen in Canary:
 
-![Screenshot](.github/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/remy/server-timings/master/.github/screenshot.png)
 
 ## Limitations
 
