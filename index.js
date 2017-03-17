@@ -1,5 +1,4 @@
 const onHeaders = require('on-headers');
-const undefsafe = require('undefsafe');
 
 const start = timings => key => {
   timings[key] = {
