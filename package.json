@@ -1,12 +1,12 @@
 {
   "name": "server-timings",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Adds `Server-Timings` header",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["timing", "server-timing", "network", "express", "middleware"],
   "author": "Remy Sharp",
   "license": "MIT",
   "dependencies": {
