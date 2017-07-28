@@ -30,10 +30,11 @@ module.exports = (req, res, next) => {
   res.locals.timings.start('Request');
 
   onHeaders(res, () => {
-    const mapping = Object.keys(timings).map((key, i) => {
+    const existingHeaders = res.getHeader('Server-Timing');
+    const mapping = [].concat(existingHeaders || []).concat(Object.keys(timings).map((key, i) => {
       const delta = timings[key].delta || end(timings)(key);
       return `${i}=${delta}; "${key}"`
-    }).join(', ');
+    })).join(', ');
 
     res.setHeader('Server-Timing', mapping);
   });
