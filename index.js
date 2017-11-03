@@ -32,7 +32,7 @@ module.exports = (req, res, next) => {
   onHeaders(res, () => {
     const mapping = Object.keys(timings).map((key, i) => {
       const delta = timings[key].delta || end(timings)(key);
-      return `${i}=${delta}; "${key}"`
+      return `${i}; duration=${delta}; description="${key}"`
     }).join(', ');
 
     res.setHeader('Server-Timing', mapping);
