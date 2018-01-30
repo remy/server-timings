@@ -34,7 +34,7 @@ module.exports = (req, res, next) => {
     const mapping = [].concat(existingHeaders || []).concat(Object.keys(timings).map((key, i) => {
       const delta = timings[key].delta || end(timings)(key);
       return `${i}; dur=${delta}; desc="${key}"`
-    }).join(', ');
+    }).join(', '));
 
     res.setHeader('Server-Timing', mapping);
   });
